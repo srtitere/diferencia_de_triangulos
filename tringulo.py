@@ -5,7 +5,7 @@ from pprint import pp
 def triangulo(num: int, valores):
 
     num_elemntos = (num*(num + 1))/2
-    num_combinaciones = math.factorial(num_elemntos)
+
     matriz_trin = []
     matriz_trin.append(valores)
     for i in range(num-1):
@@ -31,8 +31,13 @@ def obtener_variaciones_sin_repeticion_rec(set, prefix, n, k, result):
     # En caso de que tengamos una variacion (subconjunto) validos
     # de k elementos distintos.
     if (k == 0):
-        result.append(prefix)
-        return
+        try:
+            triangulo(len(prefix),prefix)
+            result.append(prefix)
+        except Exception:
+            pass
+        finally:
+            return
 
     # One by one add all characters
     # from set and recursively
