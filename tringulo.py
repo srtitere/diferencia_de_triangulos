@@ -1,6 +1,5 @@
 import math
 import sys
-import getopt
 from pprint import pp
 
 def triangulo(num: int, valores):
